@@ -19,6 +19,7 @@ body {
 /* Estilos para o Header */
 header {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
