@@ -719,6 +719,7 @@ span.destaque {
   header {
     flex-direction: row;
     align-items: flex-start;
+    width: 100%;
   }
 
   .logo img{
