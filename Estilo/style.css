@@ -24,7 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #f60000;
   height: 100px;
 }
 
@@ -720,6 +720,7 @@ span.destaque {
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
+    
   }
 
   .logo img{
