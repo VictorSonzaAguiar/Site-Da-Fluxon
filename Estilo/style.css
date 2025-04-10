@@ -92,6 +92,7 @@ button:hover {
 .hero {
   background: linear-gradient(to right, #050921, #0a0125);
   padding: 80px 60px;
+  width: 100vh;
 }
 
 .hero-content {
