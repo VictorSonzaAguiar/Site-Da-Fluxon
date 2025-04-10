@@ -1,4 +1,4 @@
-
+@charset "UTF-8";
 /* Reset básico */
 * {
   margin: 0;
@@ -14,7 +14,6 @@ body {
   background-color: #0d011d;
   color: white;
   line-height: 1.6;
-  max-width: 100vh;
 }
 
 /* Estilos para o Header */
@@ -93,7 +92,7 @@ button:hover {
 .hero {
   background: linear-gradient(to right, #050921, #0a0125);
   padding: 80px 60px;
-  width: 100vh;
+  width: 100%;
 }
 
 .hero-content {
