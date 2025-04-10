@@ -831,7 +831,7 @@ span.destaque {
   }
 
   .hamburger {
-    display: none;
+    display: flex;
     text-align: center;
     position: relative;
     top: 26px;
