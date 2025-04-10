@@ -1,0 +1,258 @@
+.features {
+    padding: 80px 60px;
+    background: linear-gradient(45deg, #1a0033, #1a4581); /* Gradiente roxo e azul neon */
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Escurece o fundo para destacar o conteúdo */
+    backdrop-filter: blur(15px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(15px);
+    z-index: -1;
+}
+
+/* Título da seção */
+.features-title h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff; /* Efeito neon no texto */
+}
+
+.features-title p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: #ddd;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* Layout de conteúdo */
+.features-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cards de Funcionalidades */
+.features-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+    left: 10%;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    height: 90%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.4); /* Sombra neon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    top: 15%;
+    right: 20%;
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #00eaff;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #00eaff; /* Efeito de glow no título */
+    text-align: center;
+    margin: 0 auto;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Efeito de hover nos cards */
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    color: #fff;
+}
+
+/* Demonstração visual (imagem ou vídeo) */
+.features-demo {
+    flex: 1;
+    max-width: 500px;
+}
+
+.features-demo h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 0 10px #00eaff; /* Efeito de glow no título */
+}
+
+.features-demo .demo-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.features-demo img {
+    max-width: 100%;
+    transition: transform 0.3s ease;
+    position: relative;
+    top: 10%;
+}
+
+.features-demo img:hover {
+    transform: scale(1.05); /* Efeito de zoom na imagem */
+}
+
+/* Botão de CTA */
+.cta {
+    margin-top: 40px;
+}
+
+.cta .btn-cta {
+    background-color: #00eaff;
+    color: #0d011d;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 0 10px #00eaff;
+    position: relative;
+    left: 46%;
+}
+
+.cta .btn-cta:hover {
+    background-color: #00c1d1;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .features-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .features-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .features-title p {
+        font-size: 1.2rem;
+    }
+
+    .features-list {
+        flex-direction: column;
+        gap: 25px;
+        left: 0;
+    }
+
+    .feature-card {
+        width: 80%;
+        max-width: 300px;
+        top: 0;
+        right: 0;
+    }
+
+    .features-demo {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .features-title h2 {
+        font-size: 2rem;
+    }
+
+    .features-title p {
+        font-size: 1rem;
+    }
+
+    .features-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-card {
+        width: 90%;
+        max-width: 350px;
+        padding: 25px;
+    }
+
+    .features-demo {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .cta .btn-cta {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .features-title p {
+        font-size: 1rem;
+    }
+
+    .feature-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .features-demo img {
+        transform: scale(1); /* Impede o zoom da imagem em telas pequenas */
+    }
+
+    .cta .btn-cta {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 12px 30px;
+    }
+}

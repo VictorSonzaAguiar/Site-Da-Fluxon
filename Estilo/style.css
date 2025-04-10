@@ -1,0 +1,930 @@
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Importando fonte */
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d011d;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Estilos para o Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  height: 100px;
+}
+
+.logo img {
+  height: 105px;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navigation li a:hover {
+  color: #00eaff; /* Cor de destaque no hover */
+}
+
+/* Menu Hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100; /* Garante que o ícone de hambúrguer fique acima do conteúdo */
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #00eaff;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Transição suave para o hover e animação */
+}
+
+.hamburger:hover .line {
+  background-color: #00c1d1; /* Cor do ícone de hambúrguer no hover */
+}
+.contact-button a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #050921, #0a0125);
+  padding: 80px 60px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  left: 15%;
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: white;
+}
+
+.text .destaque {
+  color: #75cadd;
+  text-shadow: 0 0 10px #00d0ff6b;
+}
+
+.text p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  width: 80%;
+  justify-content: start;
+  letter-spacing: 1.5px;
+}
+
+.text ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.text li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.text li span {
+  color: #00eaff;
+  margin-right: 10px;
+}
+
+/* Botão de Call to Action */
+.btn-cta {
+  background: #00eaff;
+  color: #0d011d;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 12px #00eaff;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-cta:hover {
+  background: #00c1d1;
+  box-shadow: 0 0 18px #00c1d1;
+  transform: scale(1.1);  /* Aumenta o botão em 10% */
+}
+
+.btn-cta:active {
+  transform: scale(1);  /* Retorna ao tamanho original ao clicar */
+}
+
+/* Imagem */
+.image {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  left: 10%;
+  top: 10%;
+  bottom: 25%;
+}
+
+.image img {
+  max-width: 650px;
+  filter: drop-shadow(0 0 10px #00eaff);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00eaff; /* Cor de hover */
+  transform: scale(1.1); /* Efeito de aumento no hover */
+}
+
+/* Estilo para os ícones dos serviços */
+.icone ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+ul li i {
+  margin-right: 10px;
+  color: #00eaff;
+  transition: color 0.3s ease;
+}
+
+ul li:hover i {
+  color: #75cadd; /* Mudança de cor do ícone no hover */
+}
+
+/* Estilo da seção de benefícios */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Começa fora da tela */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina na posição normal */
+  }
+}
+
+/* Estilo da seção de benefícios */
+.benefits {
+  padding: 80px 60px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.benefit-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1a0033;
+}
+
+.benefit-title p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.benefit-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Ajuste responsivo para manter os cards organizados */
+}
+
+/* Estilos dos cards */
+.benefit-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(50px); /* Deslocado para baixo inicialmente */
+  animation: slideUp 0.6s ease-out forwards; /* Aparece com o efeito de deslizamento */
+}
+
+.benefit-card:nth-child(1) {
+  animation-delay: 0.2s; /* Atraso para o primeiro card */
+}
+
+.benefit-card:nth-child(2) {
+  animation-delay: 0.4s; /* Atraso para o segundo card */
+}
+
+.benefit-card:nth-child(3) {
+  animation-delay: 0.6s; /* Atraso para o terceiro card */
+}
+.benefit-card:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do card em 5% */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave no hover */
+}
+
+.benefit-card i {
+  font-size: 3rem;
+  color: #00eaff;
+  margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+  font-size: 1.5rem;
+  color: #1a0033;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  color: #777;
+}
+
+span.destaque {
+  color: #75cadd;
+  text-shadow: 0 0 10px #00d0ff6b;
+}
+
+/* Estilo da seção de contato */
+.contact {
+  padding: 80px 60px;
+  background: linear-gradient(to right, #050921, #0a0125);
+  color: #f8f4f4;
+  font-weight: bold;
+  font-size: 25px;
+ 
+}
+
+.contact-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #7de3dd;
+  text-align: center;
+}
+
+.contact-title p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Estilo do formulário de contato */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form button {
+  background-color: #00eaff;
+  color: #0d011d;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00c1d1;
+  transform: scale(1.05);
+}
+
+/* Estilo para as informações de contato */
+.contact-info {
+  margin-top: 50px;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1a0033;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #1a0033;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info a:hover {
+  color: #00eaff;
+}
+
+/* Estilo para a seção de planos de assinatura */
+.pricing {
+  display: flex;
+  padding: 80px 60px;
+  background: linear-gradient(to right, #000000, #0a012523); /* Fundo escuro para maior contraste */
+  color: white;
+  text-align: center;
+}
+.pricing-title span.p{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.pricing-title span{
+  color: white;
+}
+
+.pricing-title h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #00eaff; /* Cor chamativa para o título */
+  font-family: "Boldonse", system-ui;
+  font-weight: bold;
+  font-style: normal;
+  text-align: left;
+  position: relative;
+  left: 10%;
+  transition: color 0.3s ease;
+}
+
+.pricing-title p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #bbb; /* Texto mais suave para a descrição */
+  width: 50%;
+  text-align: left;
+  position: relative;
+  left: 10%;
+  line-height: 1.5;
+  
+}
+
+/* Estilo para os cards de planos */
+
+.pricing-card  {
+  background-color: rgba(255, 255, 255, 0.997); /* Fundo semi-transparente */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte para destacar os cards */
+  text-align: center;
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff; /* Texto em branco para contraste */
+}
+.pricing-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.842); /* Sombra mais intensa no hover */
+}
+
+.middle-card{
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));; /* Fundo mais escuro para contraste */
+  border-radius: 12px;
+  padding: 20px;
+  width: 250%;
+  height: 80%;
+  position: relative;
+  right: 180%;
+  top: 10%;
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.842); 
+  transform: 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo do título do card */
+.pricing-card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00eaff; /* Título em azul claro para chamar atenção */
+}
+
+.pricing-card .price {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #00eaff; /* Preço em azul claro */
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.pricing-card li {
+  font-size: 1.1rem;
+  color: #ddd; /* Texto em cinza claro para legibilidade */
+  margin-bottom: 10px;
+}
+
+.pricing-card button {
+  background: #00d8ff;
+  color: white;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.pricing-card button:hover {
+  background-color: #00c1d1;
+  transform: scale(1.05); /* Efeito de zoom no botão */
+}
+
+/* Estilo da seção ChatGPT Plus */
+.chatgpt-plus {
+  padding: 80px 60px;
+  background: linear-gradient(to right, #050921, #0a0125);
+  color: white;
+  text-align: center;
+}
+
+.chatgpt-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.chatgpt-text {
+  flex: 1;
+  max-width: 500px;
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: BOLD;
+  margin: 0 auto;
+}
+
+.chatgpt-text span{
+  color: white;
+}
+.chatgpt-text span.h2{
+  color: #00c1d1;
+}
+
+.chatgpt-text h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.chatgpt-text h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.chatgpt-text ul {
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: disc;
+}
+
+.chatgpt-text li {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.chatgpt-text p {
+  font-size: 1.5rem;
+  color: #bbb;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.chatgpt-image img {
+  max-width: 550px;
+  border-radius: 10px;
+  position: relative;
+  right: 40%;
+  filter: drop-shadow(0 0 20px #00eaff);
+}
+
+/* Botão de CTA */
+.btn-cta2 {
+  background-color: #00eaff;
+  font-size: 1.5em;
+  color: #0d011d;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  right: 29%;
+  filter: drop-shadow(0 0 10px #00eaff);
+}
+
+.btn-cta2:hover {
+  background: #00c1d1;
+  box-shadow: 0 0 18px #00c1d1;
+  transform: scale(1.1);  /* Aumenta o botão em 10% */
+}
+
+.btn-cta2:active {
+  transform: scale(1);  /* Retorna ao tamanho original ao clicar */
+}
+
+/* Estilos para o footer */
+.footer {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  height:20rem;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li {
+  font-size: 1rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #00eaff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6600;
+}
+
+.footer-socials {
+  margin-top: 20px;
+}
+
+.footer-socials ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-socials li a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials li a:hover {
+  color: #00eaff;
+  transform: scale(1.1);
+}
+
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .logo img{
+    height: 190px;
+    position: relative;
+    left: 55%;
+    top: 30%;
+    bottom: 55px;
+    margin: 0 auto;
+  }
+
+  .navigation ul {
+    flex-direction: row;
+    text-align: center;
+    margin-top: 9%;
+    gap: 10px;
+    margin-top:35px;
+  }
+
+  .contact-button {
+    margin-top: 20px;
+  }
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    left: 0;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text h1 {
+    font-size: 2.2rem;
+    justify-content: start;
+    text-transform: uppercase;
+    text-orientation: initial;
+  }
+
+  .text p {
+    font-size: 1rem;
+  }
+
+  .image img {
+    max-width: 100%;
+  }
+  .benefit-card {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+  }
+  .benefit-cards {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+  .pricing{
+    flex-direction: column;
+  }
+  .pricing-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .benefit-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .chatgpt-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .chatgpt-text {
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+
+  .chatgpt-image img {
+    max-width: 200px;
+  }
+  .navigation ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Ajuste a posição do menu */
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 100;
+  }
+
+  .navigation ul.active {
+    display: none; /* Exibe o menu quando o hambúrguer for clicado */
+  }
+
+  .hamburger {
+    display: none;
+    text-align: center;
+    position: relative;
+    top: 26px;
+    right: 50%;
+    
+
+  }
+  .contact-button{
+    display: none;
+  }
+  .text h1{
+    font-size: 2.6rem;
+    text-align: left;
+    position: relative;
+    left: 28px;
+  }
+  .text p{
+    margin: 0 auto;
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    right: 30px;
+    font-weight: bold;
+  }
+  .icone {
+    position: relative;
+    left: 30px;
+    text-align: left;
+  }
+  span .icone2{
+    position: relative;
+    left: 20px;
+  }
+  .btn-cta {
+    position: relative;
+    right: 27%;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .btn-cta2{
+    font-size: 15px;
+  }
+  .image img{
+    height:20%;
+    position: relative;
+    right: 10%;
+  }
+
+  .chatgpt-image img{
+    height: 300%;
+    max-height: 600px;
+    max-width: 455px;
+    position: relative;
+    left: -2%;
+  }
+  .benefit-title p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    font-weight: bold;
+  }
+  .pricing-title h2{
+    text-align: left;
+    width:150%;
+    position: relative;
+    font-size: 33px;
+    left: 0;
+    
+  }
+  .pricing-title p {
+    text-align: left;
+    width: 100%;
+    align-items: left;
+    justify-content: start;
+    margin-bottom: 10%;
+    left: 0;
+  }
+  .pricing-cards{
+    position: relative;
+  
+  }
+  .pricing-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .middle-card{
+    transform: scale(1.0); /* Tornar o card do meio maior */
+    left: 2%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
